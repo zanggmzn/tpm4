@@ -1,0 +1,148 @@
+class DataJam {
+  String toko;
+  String merk;
+  String panjang;
+  String lebar;
+  String diameter;
+  String jenis;
+  String images;
+  String link;
+  int harga;
+  bool isAvailable;
+
+  DataJam({
+    required this.toko,
+    required this.merk,
+    required this.panjang,
+    required this.lebar,
+    required this.diameter,
+    required this.jenis,
+    required this.images,
+    required this.link,
+    required this.harga,
+    required this.isAvailable,
+  });
+}
+
+var listJam = [
+  DataJam(
+    toko: "Berrybenka",
+    merk: "Sofia Calestra Oval",
+    panjang: "24 cm",
+    lebar: "1.2 cm",
+    diameter: "3 cm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/berrysofia.png",
+    link: "https://shopee.co.id/Berrybenka-Jam-Tangan-Rantai-Wanita-Sofia-Calestra-Oval-i.81219906.10979764145?xptdk=87fb399a-1e09-4112-9855-64a0340885b2",
+    harga: 188000,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "Julius",
+    merk: "Julius JA-979",
+    panjang: "26 cm",
+    lebar: "8 mm",
+    diameter: "23 mm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/julius.png",
+    link: "https://shopee.co.id/Jam-Tangan-Julius-Wanita-Original-JA-979-i.416525640.5984531521?sp_atk=5baa4ac0-90ec-441b-b471-5ffc4e668b06&xptdk=5baa4ac0-90ec-441b-b471-5ffc4e668b06",
+    harga: 319500,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "Bono",
+    merk: "Siena Milanese Dark Rose Gold",
+    panjang: "24 cm",
+    lebar: "8 mm",
+    diameter: "32 mm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/bono.png",
+    link: "https://shopee.co.id/Bono-Watch-Siena-Milanese-Dark-Rose-Gold-i.99805663.2238880202?sp_atk=5c61c352-2662-4391-8a4f-542fff75f31a&xptdk=5c61c352-2662-4391-8a4f-542fff75f31a",
+    harga: 330000,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "SKMEI",
+    merk: "SKMEI 1901",
+    panjang: "200 mm",
+    lebar: "9 mm",
+    diameter: "25 mm",
+    jenis: "Digital",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/skmei.png",
+    link: "https://shopee.co.id/Jam-Tangan-Wanita-SKMEI-1901-(with-ALARM)-Women-LED-Digital-Stainless-Steel-Jam-Tangan-Digital-Original-i.68698945.12283806166?sp_atk=df1a6348-c877-444a-bf38-10664aed976c&xptdk=df1a6348-c877-444a-bf38-10664aed976c",
+    harga: 77000,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "SANDA",
+    merk: "SANDA P1098 CURRENOS",
+    panjang: "26 mm",
+    lebar: "8 mm",
+    diameter: "28 mm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/sanda.png",
+    link: "https://shopee.co.id/SANDA-P1098-Jam-Tangan-Wanita-Analog-Persegi-Kecil-Tali-Stainless-Steel-Quartz-CURRENOS-i.61445754.13916012791?sp_atk=cd6c9d2e-54e7-4511-89ff-13ddf2cb11cc&xptdk=cd6c9d2e-54e7-4511-89ff-13ddf2cb11cc",
+    harga: 139900,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "SHENGKE",
+    merk: "SHENGKE 0006 CURRENOS",
+    panjang: "21 cm",
+    lebar: "3 cm",
+    diameter: "30 mm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/shengke.png",
+    link: "https://shopee.co.id/SHENGKE-0006-Jam-Tangan-Wanita-Analog-Stainless-Steel-Korean-Design-CURRENOS-i.61445754.6231824286?sp_atk=f57f65f9-3c8c-4677-b01c-dc4542005700&xptdk=f57f65f9-3c8c-4677-b01c-dc4542005700",
+    harga: 99000,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "CURREN",
+    merk: "CURREN 9016 CURRENOS",
+    panjang: "20 cm",
+    lebar: "12 mm",
+    diameter: "31 mm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/curren.png",
+    link: "https://shopee.co.id/CURREN-9016-Jam-Tangan-Wanita-Analog-Stainless-Steel-ALL-TIME-CURRENOS-i.61445754.1338474295?sp_atk=62947ac9-31a9-4295-a7ca-565d60fe4246&xptdk=62947ac9-31a9-4295-a7ca-565d60fe4246",
+    harga: 139999,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "Halei",
+    merk: "Haleiwatch 412",
+    panjang: "20 cm",
+    lebar: "2.8 cm",
+    diameter: "2 cm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/halei.png",
+    link: "https://shopee.co.id/Halei-Jam-Tangan-Garansi-1-tahun-Wanita-Original-Haleiwatch-Original-Anti-Karat-Tahan-Air-412-i.56678007.1347271483?sp_atk=327f4677-2831-4173-921e-d45268e1c9d9&xptdk=327f4677-2831-4173-921e-d45268e1c9d9",
+    harga: 149999,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "Berrybenka",
+    merk: "Sofia Cherry Pearl",
+    panjang: "22 cm",
+    lebar: "1.8 cm",
+    diameter: "1.8 cm",
+    jenis: "Analog",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/berrypearl.png",
+    link: "https://shopee.co.id/Berrybenka-Jam-Tangan-Kulit-Wanita-Sofia-Cherry-Pearl-Watches-i.81219906.9020494824?sp_atk=529af15d-1f6b-4e74-b9e8-1acdd960b8d8",
+    harga: 153000,
+    isAvailable: true,
+  ),
+  DataJam(
+    toko: "Casio",
+    merk: "Casio F-91WS-7DF",
+    panjang: "20 cm",
+    lebar: "1.8 cm",
+    diameter: "35.2 mm",
+    jenis: "Digital",
+    images : "https://raw.githubusercontent.com/zanggmzn/watchimage/master/casio.png",
+    link: "https://shopee.co.id/product/43688581/11488188110",
+    harga: 499000,
+    isAvailable: true,
+  ),
+];
