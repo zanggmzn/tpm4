@@ -9,8 +9,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final String user = '123200152';
-  final String pass = 'Maulida Maizani Assabila';
+  final String user = 'user';
+  final String pass = 'user123';
 
   TextEditingController cUser =
       TextEditingController(); // ambil nilai fill user
@@ -35,16 +35,16 @@ class _LoginState extends State<Login> {
               width: 300,
               child: RichText(
                   text: const TextSpan(
-                      text: 'Welcome Back',
+                      text: 'WatchSHOP',
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 32,
-                        color: Color.fromARGB(255, 185, 38, 153),
+                        color: Color.fromARGB(255, 117, 33, 243),
                         fontWeight: FontWeight.bold,
                       ),
                       children: <TextSpan>[
                     TextSpan(
-                        text: '\nMate!',
+                        text: '\nWelcome!',
                         style: TextStyle(
                             fontFamily: 'Poppins',
                             color: Colors.black87,
@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
             SizedBox(
               width: size.width,
               height: size.height * 0.37,
-              child: Image.asset('assets/worker.png'),
+              child: Image.asset('images/watch.png'),
             ),
             Container(
               height: size.height * .26,
@@ -168,7 +168,7 @@ class _LoginState extends State<Login> {
                         },
                         child: const Text('L O G I N'),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 175, 38, 185),
+                          primary: Color.fromARGB(255, 117, 33, 243),
                         ),
                       ),
                       //child: Image.asset('assets/right-arrow.png'),

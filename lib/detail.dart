@@ -13,27 +13,6 @@ class DetailJam extends StatefulWidget {
 class _DetailJamState extends State<DetailJam> {
   final Uri _url = Uri.parse('https://flutter.dev');
   //
-  String ketersediaan = "Tersedia";
-  var warna = Colors.green;
-  statusbutton() {
-    if (widget.jam.isAvailable == false) {
-      return null;
-    } else {
-      return () {
-        String text = " ";
-        if (widget.jam.isAvailable == true) {
-          setState(() {
-            text = "Berhasil Meminjam Buku!";
-            ketersediaan = "Tidak Tersedia";
-            warna = Colors.red;
-            widget.jam.isAvailable= !widget.jam.isAvailable;
-          });
-        }
-        SnackBar snackBar = SnackBar(content: Text(text), backgroundColor: Colors.green,);
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      };
-    }
-  }
 
   Future<void> goToWebPage(String urlString) async {
     final Uri _url = Uri.parse(urlString);
@@ -44,40 +23,41 @@ class _DetailJamState extends State<DetailJam> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
+        backgroundColor: const Color(0xfff0f1f5),
         appBar: AppBar(
-          title: Text("${widget.jam.merk}"),
-          centerTitle: true,
-          actions: [
-            IconButton(
-                onPressed: () async {
-                  await goToWebPage(widget.jam.link);
-                },
-                icon: Icon(Icons.search, color: Colors.white)),
-          ],
-        ),
+            title: Text("${widget.jam.merk}"),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                  onPressed: () async {
+                    await goToWebPage(widget.jam.link);
+                  },
+                  icon: Icon(Icons.search, color: Colors.white)),
+            ],
+            backgroundColor: Colors.black),
         body: Center(
+          child: Container(
+          padding: const EdgeInsets.all(18),
+          height: size.height,
+          width: size.width,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: 30,
               ),
-              Container(
-                height: 220,
-                width: 270,
-                padding: const EdgeInsets.all(20),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Image.network(widget.jam.images),
-                  ],
-                ),
+              SizedBox(
+                width: size.width,
+                height: size.height * 0.35,
+                child: Image.network(widget.jam.images),
               ),
               Card(
                 child: Container(
-                  height: 200,
-                  width: 700,
+                  height: 270,
+                  width: 430,
                   padding: const EdgeInsets.all(5),
                   child: Row(
                     children: [
@@ -90,7 +70,7 @@ class _DetailJamState extends State<DetailJam> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Judul                      : " + widget.jam.toko,
+                            "Toko                      : " + widget.jam.toko,
                             style: TextStyle(fontSize: 16),
                             maxLines: 1,
                           ),
@@ -98,7 +78,7 @@ class _DetailJamState extends State<DetailJam> {
                             height: 7,
                           ),
                           Text(
-                            "Penulis                   : " + widget.jam.merk,
+                            "Merk                      : " + widget.jam.merk,
                             style: TextStyle(fontSize: 16),
                             maxLines: 1,
                           ),
@@ -106,8 +86,7 @@ class _DetailJamState extends State<DetailJam> {
                             height: 7,
                           ),
                           Text(
-                            "Bahasa                   : " +
-                                widget.jam.panjang,
+                            "Panjang                : " + widget.jam.panjang,
                             style: TextStyle(fontSize: 16),
                             maxLines: 1,
                           ),
@@ -115,23 +94,7 @@ class _DetailJamState extends State<DetailJam> {
                             height: 7,
                           ),
                           Text(
-                            "Negara                   : " + widget.jam.diameter,
-                            style: TextStyle(fontSize: 16),
-                            maxLines: 1,
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            "Jumlah Halaman : " + widget.jam.harga.toString(),
-                            style: TextStyle(fontSize: 16),
-                            maxLines: 1,
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            "Tahun Terbit         : " +
+                            "Lebar                     : " +
                                 widget.jam.lebar.toString(),
                             style: TextStyle(fontSize: 16),
                             maxLines: 1,
@@ -140,9 +103,21 @@ class _DetailJamState extends State<DetailJam> {
                             height: 7,
                           ),
                           Text(
-                            'Status                   : ' + ketersediaan,
-                            style: TextStyle(fontSize: 16, color: warna),
+                            "Diameter              : " + widget.jam.diameter,
+                            style: TextStyle(fontSize: 16),
                             maxLines: 1,
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          Text(
+                            "Harga                    : " +
+                                widget.jam.harga.toString(),
+                            style: TextStyle(fontSize: 16),
+                            maxLines: 1,
+                          ),
+                          SizedBox(
+                            height: 7,
                           ),
                         ],
                       ),
@@ -150,20 +125,8 @@ class _DetailJamState extends State<DetailJam> {
                   ),
                 ),
               ),
-              Container(
-                  height: 35,
-                  width: 700,
-                  padding: const EdgeInsets.all(5),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size.fromHeight(20),
-                    ),
-                    onPressed: statusbutton(),
-                    child: const Text('Pinjam Buku'),
-                  ),
-                ),
             ],
           ),
-        ));
+        )));
   }
 }
